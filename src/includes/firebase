@@ -1,0 +1,25 @@
+import firebase from 'firebase/app'
+import 'firebase/auth'
+import 'firebase/firestore'
+import 'firebase/storage'
+
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: 'AIzaSyCOewpC_RWUQaPvJa26TS2El0-4edatCYU',
+  authDomain: 'wealthwatch-d1581.firebaseapp.com',
+  projectId: 'wealthwatch-d1581',
+  storageBucket: 'wealthwatch-d1581.appspot.com',
+  appId: '1:216000251218:web:5f88bbaef33b1c8685268b'
+}
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig)
+
+const auth = firebase.auth()
+const db = firebase.firestore()
+const storage = firebase.storage()
+
+const usersCollection = db.collection('users')
+const tickersCollection = db.collection('tickers')
+
+export { auth, db, usersCollection, tickersCollection, storage }
